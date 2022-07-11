@@ -1,0 +1,4 @@
+include ':tsmkit_support'
+include ':tsmkit_core'
+include ':app'
+rootProject.name = "Tsmkit"

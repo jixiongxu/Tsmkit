@@ -1,0 +1,21 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply plugin: "com.vanniktech.maven.publish"
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 32
+        versionCode 1004
+        versionName "1.0.4"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
