@@ -15,10 +15,10 @@ public class TsmMethodVisitor extends AdviceAdapter {
     private TsmKitAnnotationVisitor mTsmKitAnnotationVisitor;
     private final String methodName;
     private final boolean isStaticMethod;
+    private final boolean isPrivate;
     private String className;
-    private ClassWriter cw;
     private TsmKitClassVisitor cv;
-    private Type mineType;
+    private final Type mineType;
 
     /**
      * Constructs a new {@link AdviceAdapter}.
@@ -35,10 +35,10 @@ public class TsmMethodVisitor extends AdviceAdapter {
         mineType = Type.getMethodType(descriptor);
         methodName = name;
         isStaticMethod = access == ACC_STATIC + 1;
+        isPrivate = access == ACC_PRIVATE;
     }
 
     public void setClassWriter(ClassWriter classWriter) {
-        cw = classWriter;
     }
 
     public void setClassVisitor(TsmKitClassVisitor classWriter) {
@@ -72,6 +72,13 @@ public class TsmMethodVisitor extends AdviceAdapter {
         super.onMethodEnter();
         if (!inject) {
             return;
+        }
+        if (isPrivate) {
+            try {
+                throw new Exception("TsmKit not allow private method:\nat:" + className + ":" + methodName);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         Type[] argumentTypes = getArgumentTypes();
         String md5Tag = Utils.stringToMD5(Type.getMethodDescriptor(getReturnType(), argumentTypes));
