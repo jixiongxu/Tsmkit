@@ -11,7 +11,7 @@ buildscript {
         //noinspection AndroidGradlePluginVersion
         classpath "com.android.tools.build:gradle:4.1.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
-        classpath "io.github.jixiongxu.tsmkit:tsmkit_support:1.0.8"
+        classpath "io.github.jixiongxu.tsmkit:tsmkit_support:1.0.9"
         classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
     }
 }

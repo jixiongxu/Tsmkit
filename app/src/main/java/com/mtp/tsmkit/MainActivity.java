@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @TsmKit(dispatcher = RunType.AndroidMain)
-    public void setMsg(String msg) {
+    protected void setMsg(String msg) {
         TextView viewById = findViewById(R.id.tv_msg);
         viewById.setText(msg);
     }
