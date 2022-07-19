@@ -12,7 +12,7 @@ buildscript {
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-
+        classpath "io.github.jixiongxu.tsmkit:tsmkit_support:1.0.9"
     }
 }
 ```
