@@ -1,7 +1,7 @@
-# TsmKit线程切换框架
+# TsmKit
 
 ### 说明
-Tsmkit是一个专注于异步工具库，可以使得在可以简单快速的将方法切换到对应的线程中执行。
+Tsmkit是用于方法的异步库，可以简单快速的将方法切换到对应的线程中执行。
 
 ### 接入：
 
@@ -33,4 +33,10 @@ dependencies {
         Log.d(TAG, "test2 run on:" + Thread.currentThread().getName());
     }
 ```
+
+### 注意
+**@Tsmkit的方法不支持带有return**\
+**@Tsmkit的方法不支持private**
+
+
 
