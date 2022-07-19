@@ -35,7 +35,7 @@ dependencies {
 ```
 
 ### 注意
-**@Tsmkit的方法不支持带有return**\
+**@Tsmkit的方法不支持return**\
 **@Tsmkit的方法不支持private**
 
 
